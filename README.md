@@ -1,31 +1,19 @@
 
-> Diese Seite bei [https://jasperp92.github.io/cardkb-i2ckeyboard/](https://jasperp92.github.io/cardkb-i2ckeyboard/) öffnen
+This is a MakeCode extension for the Grove Keyboard "CardKB" of M5Stack. It's still in the making.
+This extension will work for the Calliope mini as well for the BBC micro:bit.
 
-## Als Erweiterung verwenden
 
-Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
+### Wiring:
+On the Calliope mini the wiring is quite simple. Just plug the keyboard to the left A0 Grove-port. 
+It uses the I²C protocol. The I²C-address of the keyboard is **0x5F (95)**.
 
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Neues Projekt**
-* klicke auf **Erweiterungen** unter dem Zahnrad-Menü
-* nach **https://github.com/jasperp92/cardkb-i2ckeyboard** suchen und importieren
 
-## Dieses Projekt bearbeiten ![Build Status Abzeichen](https://github.com/jasperp92/cardkb-i2ckeyboard/workflows/MakeCode/badge.svg)
+Further information can be found here: https://docs.m5stack.com/en/unit/cardkb
 
-Um dieses Repository in MakeCode zu bearbeiten.
 
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Importieren** und dann auf **Importiere URL**
-* füge **https://github.com/jasperp92/cardkb-i2ckeyboard** ein und klicke auf Importieren
+#### TODO:
+- [ ] creating differnt output datatypes
+- [ ] seperate functions for charcode and ascii characters
+- [ ] numbers (1,2,3..) to integers per default?
+- [ ] function for writing and storing words? 
 
-## Blockvorschau
-
-Dieses Bild zeigt den Blockcode vom letzten Commit im Master an.
-Die Aktualisierung dieses Bildes kann einige Minuten dauern.
-
-![Eine gerenderte Ansicht der Blöcke](https://github.com/jasperp92/cardkb-i2ckeyboard/raw/master/.github/makecode/blocks.png)
-
-#### Metadaten (verwendet für Suche, Rendering)
-
-* for PXT/calliopemini
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
