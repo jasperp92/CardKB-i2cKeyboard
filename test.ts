@@ -1,28 +1,17 @@
-let letter = ""
-basic.forever(function () {
-    letter = CardKB.readLetter(characterFormat.charcode)
-    if (letter == "-73") {
-        basic.showIcon(IconNames.ArrowEast)
-    } else if (letter == "-74") {
-        basic.showIcon(IconNames.ArrowSouth)
-    } else if (letter == "-75") {
-        basic.showIcon(IconNames.ArrowNorth)
-    } else if (letter == "-76") {
-        basic.showIcon(IconNames.ArrowWest)
-    }
-})
+/* this is an example of using the charcode to create strings with the text block. Usually the Keyboard functions for reading charcode or letter should only evoked once and stored in a variable.
+ */
 
-let letter = 0
+let charcode = 0
 basic.forever(function () {
-    basic.showString(CardKB.readLetter())
-    letter = CardKB.readCharCode()
-    if (letter == -73) {
+    charcode = CardKB.readCharcode()
+    basic.showString(String.fromCharCode(charcode))
+    if (charcode == -73) {
         basic.showIcon(IconNames.ArrowEast)
-    } else if (letter == -74) {
+    } else if (charcode == -74) {
         basic.showIcon(IconNames.ArrowSouth)
-    } else if (letter == -75) {
+    } else if (charcode == -75) {
         basic.showIcon(IconNames.ArrowNorth)
-    } else if (letter == -76) {
+    } else if (charcode == -76) {
         basic.showIcon(IconNames.ArrowWest)
     }
 })
