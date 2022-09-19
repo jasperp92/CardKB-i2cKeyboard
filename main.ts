@@ -15,14 +15,22 @@ namespace CardKB {
         return charcode
     }
 
-//% block="read string" blockId=readString
+    //% block="read string" blockId=readString
     export function readString() {
         let charcode: number = 0;
         charcode = pins.i2cReadNumber(i2cDevice, NumberFormat.Int8LE, true)
-        return String.fromCharCode(charcode)
+        if (charcode < 0) {
+            return assignSpecialCharacter(charcode)
+        } else {
+            return String.fromCharCode(charcode)
+        }
+    }
+
+    function assignSpecialCharacter(negativeCharcode: number) {
+        let specialCharacters: string[] = ['esc', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', 'del', 'tab', '{', '}', '[', ']', '/', '\\', '|', '~', "'", '"', '', '', 'shift', ';', ':', '`', '+', '-', '_', '=', '?', '', 'enter', 'sym', '', '', '', '', '', '', '', '', '<', '>', ' '];
+        return specialCharacters[128 + negativeCharcode]
     }
 }
-
 
 /**
  * Functions are mapped to blocks using various macros
